@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5 text-center" style="max-width: 40rem;">
+    <h2 class="mb-3 border-bottom" style="padding: 10px;">Inventries</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Item</td>
+                <td>Quantity</td>
+                <td>action</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inventory in inventories %}
+            <tr>
+                <td>{{ inventory.item }}</td>
+                <td>{{ inventory.quantity }}</td>
+                <td>
+                    <a href="/update/{{ inventory.id }}" class="btn btn-primary">Update</a>
+                    <a href="/delete/{{ inventory.id }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

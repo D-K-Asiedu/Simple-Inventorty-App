@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5 text-center" style="width: 40rem;">
+    <h2 class="mb-3 border-bottom" style="padding: 10px;">Update Inventorty</h2>
+    <form method="post" action="/update/{{ inventory.id }}">
+        <!-- Item Name input -->
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control" name="name" value="{{ inventory.item }}"/>
+          <label class="form-label">Item Name</label>
+        </div>
+      
+        <!-- Quantity input -->
+        <div class="form-outline mb-4">
+          <input type="number" class="form-control" name="quantity" value="{{ inventory.quantity }}"/>
+          <label class="form-label" >Quantity</label>
+        </div>
+      
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+</div>
+{% endblock body %}
